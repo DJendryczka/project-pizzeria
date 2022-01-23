@@ -85,7 +85,7 @@
 
     getElements(){
       const thisProduct = this;
-    
+      thisProduct.amountWidgetElem = thisProduct.element.querySelector(select.menuProduct.amountWidget);
       thisProduct.accordionTrigger = thisProduct.element.querySelector(select.menuProduct.clickable);
       thisProduct.form = thisProduct.element.querySelector(select.menuProduct.form);
       thisProduct.formInputs = thisProduct.form.querySelectorAll(select.all.formInputs);
@@ -191,6 +191,15 @@
 
       // update calculated price in the HTML
       thisProduct.priceElem.innerHTML = price;
+    }
+  }
+
+  class AmountWidget{
+    constructor(element){
+      const thisWiget = this;
+
+      console.log(`AmountWiget:`, thisWiget);
+      console.log(`constructor arguments:`, element);
     }
   }
 
