@@ -63,8 +63,15 @@
       thisProduct.getElements();
       thisProduct.initAccordion();
       thisProduct.initOrderForm();
+      thisProduct.initAmountWidget();
       thisProduct.processOrder();
       console.log('new Product:', thisProduct);
+    }
+    initAmountWidget(){
+      const thisProduct = this;
+
+
+      thisProduct.amountWidget = new AmountWidget(thisProduct.amountWidgetElem);
     }
     renderInMenu(){
       const thisProduct = this;
