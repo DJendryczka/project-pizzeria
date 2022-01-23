@@ -66,7 +66,11 @@
       thisProduct.initAmountWidget();
       thisProduct.processOrder();
       console.log('new Product:', thisProduct);
+    
     }
+    
+
+    
     initAmountWidget(){
       const thisProduct = this;
 
@@ -203,9 +207,21 @@
 
   class AmountWidget{
     constructor(element){
-      const thisWiget = this;
+      const thisWidget = this;
 
-      console.log(`AmountWiget:`, thisWiget);
+      thisWidget.getElements(element);
+
+
+      getElements(element){
+        const thisWidget = this;
+      
+        thisWidget.element = element;
+        thisWidget.input = thisWidget.element.querySelector(select.widgets.amount.input);
+        thisWidget.linkDecrease = thisWidget.element.querySelector(select.widgets.amount.linkDecrease);
+        thisWidget.linkIncrease = thisWidget.element.querySelector(select.widgets.amount.linkIncrease);
+      }
+
+      console.log(`AmountWidget:`, thisWidget);
       console.log(`constructor arguments:`, element);
     }
   }
