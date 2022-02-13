@@ -233,21 +233,22 @@
       const newValue = parseInt(value);
 
       // to do add validation
-      if(thisWidget.value !== newValue && !isNaN(newValue)&& newValue >= settings.amountWidget.defaultMin &&
+      if(thisWidget.value !== newValue && !isNaN(newValue) && newValue >= settings.amountWidget.defaultMin &&
       newValue <= settings.amountWidget.defaultMax
       ){
         thisWidget.value = newValue;
       }
       
 
-      thisWidget.value = newValue;
+      //thisWidget.value = newValue;
       thisWidget.input.value = thisWidget.value;
     }
 
     initActions(){
       const thisWidget = this;
       thisWidget.input.addEventListener(`change`, function() {
-        thisWidget.setValue(thisWidget.value);
+        thisWidget.setValue(thisWidget.input.value);
+
       });
       thisWidget.linkDecrease.addEventListener(`click`, function(event) {
         event.preventDefault();
