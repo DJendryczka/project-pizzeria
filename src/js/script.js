@@ -300,6 +300,26 @@
       thisWidget.element.dispatchEvent(event);
     }
   }
+  class Cart{
+    constructor(element){
+      const thisCart = this;
+
+      thisCart.products = [];
+
+      thisCart.getElements(element);
+
+      console.log(`new cart`, thisCart);
+    }
+
+    getElements(element) {
+      const thisCart = this;
+
+      thisCart.dom = {};
+
+      thisCart.dom.wrapper = element;
+    }
+
+  }
 
   const app = {
     initMenu: function(){
@@ -327,6 +347,11 @@
 
       thisApp.initData();
       thisApp.initMenu();
+    },
+    initCart: function(){
+      const thisApp = this;
+      const cartElem = document.querySelector(select.containerOf.cart);
+      thisApp.cart = new Cart(cartElem);
     },
   };
  
