@@ -110,6 +110,9 @@
 
 
       thisProduct.amountWidget = new AmountWidget(thisProduct.amountWidgetElem);
+      thisProduct.amountWidgetElem.addEventListener(`updated`, function(){
+        thisProduct.processOrder();
+      });
     }
     renderInMenu(){
       const thisProduct = this;
@@ -271,11 +274,11 @@
       newValue <= settings.amountWidget.defaultMax
       ){
         thisWidget.value = newValue;
-        
+        thisWidget.announce();
       }
       
 
-      thisWidget.announce();
+      
       thisWidget.input.value = thisWidget.value;
     }
 
