@@ -310,10 +310,12 @@
       thisCart.products = [];
 
       thisCart.getElements(element);
+      // inicjalizacja akcji koszyka
+      thisCart.initActions();
 
       console.log(`new cart`, thisCart);
     }
-
+    // selektory
     getElements(element) {
       const thisCart = this;
 
@@ -322,6 +324,7 @@
       thisCart.dom.wrapper = element;
       thisCart.dom.toggleTrigger = thisCart.dom.wrapper.querySelector(select.cart.toggleTrigger);
     }
+    // akcje koszyka
     initActions(){
       const thisCart = this;
       thisCart.dom.toggleTrigger.addEventListener(`click`, function(event) {
@@ -358,6 +361,8 @@
 
       thisApp.initData();
       thisApp.initMenu();
+      // inicjalizacja koszyka
+      thisApp.initCart();
     },
     initCart: function(){
       const thisApp = this;
@@ -365,6 +370,6 @@
       thisApp.cart = new Cart(cartElem);
     },
   };
- 
+  //371 start aplikacji
   app.init();
 }
