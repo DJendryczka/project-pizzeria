@@ -188,7 +188,15 @@
       thisProduct.cartButton.addEventListener('click', function(event){
         event.preventDefault();
         thisProduct.processOrder();
+        thisProduct.addToCart();
       });
+    }
+    // new method addToCart
+    addToCart(){
+      const thisProduct = this;
+
+
+      app.cart.add(thisProduct);
     }
 
     processOrder(){
