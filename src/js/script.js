@@ -315,6 +315,14 @@
 
       console.log(`new cart`, thisCart);
     }
+
+    // metoda addtocart(add)
+
+    add(menuProduct){
+      //const thisCart = this;
+
+      console.log(`adding product`, menuProduct);
+    }
     // selektory
     getElements(element) {
       const thisCart = this;
