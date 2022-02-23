@@ -196,7 +196,7 @@
       const thisProduct = this;
 
 
-      app.cart.add(thisProduct);
+      app.cart.add(thisProduct.prepareCartProduct());
     }
 
     //nowa metoda prepareCartProduct
