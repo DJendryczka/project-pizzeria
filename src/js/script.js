@@ -241,7 +241,7 @@
           }
         }
       }
-  
+      console.log(params);
       return params;
     }
 
@@ -281,7 +281,7 @@
             }
           }
           const optionImage = thisProduct.imageWrapper.querySelector(`.${paramId}-${optionId}`);
-          console.log(`opcja `, optionImage);
+          console.log(`opcja`, optionImage);
           if(optionImage) {
             if (optionSelected) {
               optionImage.classList.add(classNames.menuProduct.imageVisible);
@@ -291,10 +291,11 @@
           }
         }
       }
+      thisProduct.priceSingle = price;
       price *= thisProduct.amountWidget.value;
       // update calculated price in the HTML
       thisProduct.priceElem.innerHTML = price;
-      thisProduct.priceSingle = price;
+      
     }
   }
 
