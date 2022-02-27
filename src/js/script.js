@@ -413,10 +413,9 @@
       thisCartProduct.price = menuProduct.price;
       thisCartProduct.priceSingle = menuProduct.priceSingle;
       thisCartProduct.params = menuProduct.params;
-  
       thisCartProduct.getElements(element);
-      thisCartProduct.initAmountWidget();
-      thisCartProduct.initActions();
+      //thisCartProduct.initAmountWidget();
+      //thisCartProduct.initActions();
   
       console.log(`thisCartProduct`, thisCartProduct);
 
@@ -433,6 +432,7 @@
       thisCartProduct.dom.remove = element.querySelector(select.cartProduct.remove);
   
     }
+    
   }
 
   const app = {
